@@ -1,5 +1,8 @@
 package methodReference.domain;
 
+import java.util.function.BiPredicate;
+import java.util.function.Predicate;
+
 public class Anime implements Comparable<Anime>{
     private String title;
     private  Integer seasons;
@@ -8,6 +11,15 @@ public class Anime implements Comparable<Anime>{
         this.title = title;
         this.seasons = seasons;
     }
+
+    public Anime(Object... objects) {
+        if(objects!=null && objects.length==2) {
+            this.title = (String) objects[0];
+            this.seasons = (Integer) objects[1];
+        }
+    }
+
+
 
     public String getTitle() {
         return title;
