@@ -1,6 +1,6 @@
 package methodReference.domain;
 
-public class Anime {
+public class Anime implements Comparable<Anime>{
     private String title;
     private  Integer seasons;
 
@@ -31,5 +31,10 @@ public class Anime {
                 "title='" + title + '\'' +
                 ", seasons=" + seasons +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Anime outroAnime) {
+        return this.getTitle().compareTo(outroAnime.getTitle());
     }
 }
